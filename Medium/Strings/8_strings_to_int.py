@@ -24,7 +24,6 @@ class Solution:
         if len(arr_number) == 0:
             return 0
 
-
         result_num = 0
         for i in range(len(arr_number)):
             arr_number[i] = ord(arr_number[i]) - 48
