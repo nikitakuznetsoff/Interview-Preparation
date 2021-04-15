@@ -16,6 +16,8 @@
 #         self.right = right
 
 
+# test
+
 class Solution:
     def isValidBST(self, root: TreeNode) -> bool:
         def rec_func(node: TreeNode, min: int, max: int) -> bool:
