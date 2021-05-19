@@ -12,19 +12,25 @@ from typing import List
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         d = Counter(nums)
-        ans = []
-        j = 0
+        first, second = 0, 0
+        results = []
 
-        for i, key in enumerate(d.keys()):
+        for key in d.keys():
             if d.get(target - key):
                 if target == 2 * key and d[key] < 2:
                     continue
-                ans.append(i)
-                j = i
+                first = key
+                second = target - key
                 break
+        
+        i = 0
+        while len(results) < 2:
+            if nums[i] == first:
+                results.append(i)
+            elif nums[i] == second:
+                results.append(i)
+            i += 1
+        return sorted(results)
 
-        for i in range(j + 1, len(nums)):
-            if target - nums[j] == nums[i]:
-                ans.append(i)
-                break
-        return ans
+sl = Solution()
+print(sl.twoSum([2,7,11,15], 9))
